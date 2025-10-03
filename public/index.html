@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registro Pocket</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>PROTOCOLO DE REGISTRO POCKET</h1>
+
+  <!-- PAGE 1: Escolher separador -->
+  <div id="page-separador" class="page active">
+    <h3>Selecione o SEPARADOR</h3>
+    <div class="grid" id="separadoresGrid">
+      <!-- Os cards serão injetados via JS -->
+    </div>
+    <div class="controls">
+      <button id="btnAvancar" disabled>AVANÇAR</button>
+      <div class="small">Selecione quem está registrando para continuar</div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: Escolher pocket e ação -->
+  <div id="page-pocket" class="page">
+    <h3>Número do POCKET</h3>
+
+    <div class="grid" id="pocketsGrid">
+      <!-- pockets serão injetados -->
+    </div>
+
+    <div class="action-select">
+      <label><input type="radio" name="acao" value="entrada" checked> Entrada</label>
+      <label><input type="radio" name="acao" value="saida"> Saída</label>
+    </div>
+
+    <div class="controls">
+      <button id="btnSalvar">SALVAR</button>
+      <button id="btnVoltar" style="background:#888; margin-left:10px;">VOLTAR</button>
+      <div id="msg"></div>
+      <div id="error"></div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

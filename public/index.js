@@ -107,6 +107,34 @@ const separadores = [
     console.error(err);
     alert("⚠️ Erro de conexão: " + err.message);
   }
+
+  //DELETAR 
+  document.getElementById("btnDeletar").addEventListener("click", async () => {
+    const id = prompt("Digite o ID do movimento que deseja deletar:");
+  
+    if (!id) return alert("ID não informado!");
+  
+    if (!confirm(`Tem certeza que deseja deletar o movimento #${id}?`)) return;
+  
+    try {
+      const response = await fetch(`http://192.168.88.56:3000/movimentos/${id}`, {
+        method: "DELETE",
+      });
+  
+      const result = await response.json();
+  
+      if (response.ok) {
+        alert("Movimento deletado com sucesso!");
+      } else {
+        alert(`Erro: ${result.error}`);
+      }
+    } catch (err) {
+      alert("Erro ao conectar com o servidor.");
+      console.error(err);
+    }
+  });
+  
+
 };
 
   // inicializa
